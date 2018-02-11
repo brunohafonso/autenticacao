@@ -22,7 +22,13 @@ namespace autenticacaoefcookie.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            if(User.Identity.IsAuthenticated) 
+            {
+                return RedirectToAction("Index", "Financeiro");
+            } else 
+            {
+                return View();
+            }
         }
 
         [HttpPost]

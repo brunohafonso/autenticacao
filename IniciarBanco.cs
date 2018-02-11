@@ -17,7 +17,7 @@ namespace autenticacaoefcookie
             var usuario = new Usuario("bruno afonso", "brunohafonso@gmail.com", "bbc259521");
             contexto.Usuarios.Add(usuario);
 
-            var permissao = new Permissao("Adicionar");
+            var permissao = new Permissao("Financeiro");
             contexto.Permissoes.Add(permissao);
 
             var usuarioPermissao = new UsuarioPermissao(usuario.IdUsuario, permissao.IdPermissao);

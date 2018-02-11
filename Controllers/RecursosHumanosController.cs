@@ -1,7 +1,14 @@
-namespace autenticacaoefcookie.Controllers
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace autenticacaoefcookie.Controllers 
 {
-    public class RecursosHumanosController
+    [Authorize (Roles = "Recursos Humanos")]
+    public class RecursosHumanosController : Controller 
     {
-        
+        public IActionResult Index () 
+        {
+            return View();
+        }
     }
 }
