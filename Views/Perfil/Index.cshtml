@@ -1,0 +1,23 @@
+@using System.Security.Claims;
+@model autenticacaoefcookie.Models.Usuario
+
+@{
+    ViewData["title"] = @User.Identity.Name;
+}
+<div class="row">
+    <h3 class="center">
+        Perfil do Usuário
+    </h3>
+    <div class="well well-sm">
+        <h4>
+            
+        </h4>
+        <p>
+            <i class="glyphicon glyphicon-user"></i> Nome: @Model.Nome
+            <br />
+            <i class="glyphicon glyphicon-envelope"></i> Email: @Model.Email
+            <br />
+            <i class="glyphicon glyphicon-gift"></i> Data de Nascimento @Model.DataNascimento
+        </p>            
+    </div>
+</div>

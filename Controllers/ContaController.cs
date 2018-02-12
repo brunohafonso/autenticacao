@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -31,7 +32,7 @@ namespace autenticacaoefcookie.Controllers
             }
         }
 
-        [HttpPost]
+         [HttpPost]
         public IActionResult Login(Usuario usuario)
         {
             try

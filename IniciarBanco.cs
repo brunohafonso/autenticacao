@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using autenticacaoefcookie.Dados;
 using autenticacaoefcookie.Models;
@@ -14,7 +15,7 @@ namespace autenticacaoefcookie
                 return;
             }
 
-            var usuario = new Usuario("bruno afonso", "brunohafonso@gmail.com", "bbc259521");
+            var usuario = new Usuario("bruno afonso", "brunohafonso@gmail.com", "bbc259521", "828.720.1", 1, "Aux. Técnico de Educação", "48.976.343.1", "440.630.768.06", "Solteiro", "(11) 94855-2364", DateTime.Parse("25/04/1995"), new Endereco("Rua", "do Capitarzinho", 33, "Casa 05", "Vila Liviero", "São Paulo", "SP"), "Cei Jardim Climax II", "Cei Jardim Climax II");
             contexto.Usuarios.Add(usuario);
 
             var permissao = new Permissao("Financeiro");
