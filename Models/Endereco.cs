@@ -9,7 +9,8 @@ namespace autenticacaoefcookie
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
-        public string Tipo { get; set; }
+        [Required]
+        public int IdUsuario { get; set; }
         
         public string Logradouro { get; set; }
         
@@ -28,9 +29,8 @@ namespace autenticacaoefcookie
             
         }
 
-        public Endereco(string Tipo, string Logradouro, int Numero, string Complemento, string Bairro, string Cidade, string Estado)
+        public Endereco(string Logradouro, int Numero, string Complemento, string Bairro, string Cidade, string Estado)
         {
-            this.Tipo = Tipo;
             this.Logradouro = Logradouro;
             this.Numero = Numero;
             this.Complemento = Complemento;

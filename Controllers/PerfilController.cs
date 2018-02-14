@@ -17,6 +17,7 @@ namespace autenticacaoefcookie.Controllers
     {
         readonly AutenticacaoContexto _contexto;
 
+        Usuario usuario = new Usuario();
         public PerfilController(AutenticacaoContexto context)
         {
             _contexto = context;
@@ -24,9 +25,11 @@ namespace autenticacaoefcookie.Controllers
                 
         public IActionResult Index() 
         {
-            //int Id = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Sid).Select(c => c.Value).SingleOrDefault());
-            //var usuario = _contexto.Usuarios.Where(u => u.IdUsuario == Id).FirstOrDefault();
-            return View();
+            int Id = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Sid).Select(c => c.Value).SingleOrDefault());
+            var endereco = _contexto.Enderecos.Where(u => u.IdUsuario == Id).FirstOrDefault();
+            var usuario = _contexto.Usuarios.Where(u => u.IdUsuario == Id).FirstOrDefault();
+            usuario.Endereco = endereco;
+            return View(usuario);
         }
     }
 }

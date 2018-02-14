@@ -8,6 +8,7 @@ namespace autenticacaoefcookie.Dados
         public AutenticacaoContexto(DbContextOptions<AutenticacaoContexto> options) : base(options) { }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Permissao> Permissoes { get; set; }
         public DbSet<UsuarioPermissao> UsuariosPermissoes { get; set; }
 
@@ -15,6 +16,7 @@ namespace autenticacaoefcookie.Dados
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Usuario>().ToTable("Usuarios");
+            modelBuilder.Entity<Endereco>().ToTable("Enderecos");
             modelBuilder.Entity<Permissao>().ToTable("Permissoes");
             modelBuilder.Entity<UsuarioPermissao>().ToTable("UsuariosPermissoes");
 
