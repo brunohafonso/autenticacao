@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace autenticacaoefcookie.Models
 {
     public class Usuario
@@ -30,7 +31,6 @@ namespace autenticacaoefcookie.Models
         public string RF { get; set; }
         
         [Required]
-        [StringLength(10, MinimumLength=1)]
         public int Vinculo { get; set; }
         
         [Required]

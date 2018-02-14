@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-namespace autenticacao.Controllers
+namespace autenticacaoefcookie.Controllers
 {
     [Authorize]
     public class PerfilController : Controller
@@ -24,9 +24,9 @@ namespace autenticacao.Controllers
                 
         public IActionResult Index() 
         {
-            int Id = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Sid).Select(c => c.Value).SingleOrDefault());
-            var usuario = _contexto.Usuarios.Where(u => u.IdUsuario == Id).FirstOrDefault();
-            return View(usuario);
+            //int Id = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Sid).Select(c => c.Value).SingleOrDefault());
+            //var usuario = _contexto.Usuarios.Where(u => u.IdUsuario == Id).FirstOrDefault();
+            return View();
         }
     }
 }
